@@ -179,3 +179,20 @@ h3 {
     border-radius: 50%;
     margin: 20px auto; /* Centering the image */
 }
+
+@media (max-width: 768px) { /* Adjust for tablets and large phones */
+    .hero, .content-section {
+        padding: 20px; /* Less padding for smaller screens */
+    }
+    h1, h2, h3, p {
+        font-size: smaller; /* Adjust text size */
+    }
+    #navbar ul {
+        flex-direction: column; /* Stack nav items vertically */
+        padding: 0;
+    }
+    #navbar ul li {
+        margin: 10px 0; /* Space out nav items */
+    }
+    /* Add more custom styles for mobile */
+}
