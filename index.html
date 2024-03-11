@@ -1,394 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<title>Maya</title>
-<!--
-
-Template 2102 Constructive
-
-http://www.tooplate.com/view/2102-constructive
-
--->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
-	<link rel="stylesheet" href="css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-	<link rel="stylesheet" type="text/css" href="css/tooplate-style.css">
-	<link rel="icon" type="image/png" href="https://i.ya-webdesign.com/images/love-sign-png-5.png">
-
-
-
-	<script>
-		var renderPage = true;
-
-	if(navigator.userAgent.indexOf('MSIE')!==-1
-		|| navigator.appVersion.indexOf('Trident/') > 0){
-   		/* Microsoft Internet Explorer detected in. */
-   		alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
-   		renderPage = false;
-	}
-	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baivab Pokhrel - Data Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono&display=swap" rel="stylesheet">
 </head>
-
 <body>
-	<!-- Loader -->
-	<div id="loader-wrapper">
-		<div id="loader"></div>
-		<div class="loader-section section-left"></div>
-		<div class="loader-section section-right"></div>
-	</div>
-	
-	<!-- Page Content -->
-	<div class="container-fluid tm-main">
-		<div class="row tm-main-row">
+    <div class="background-animation"></div>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#game">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <img src="img/baivab_pic.jpeg" alt="Baivab Pokhrel" id="profile-pic" style="display: none; max-width: 150px; border-radius: 50%; margin: 20px auto;">
+            <h1 id="typing-name"></h1>
+            <p id="typing-description"></p>
+        </section>
+        
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>Experienced Data Scientist proficient in handling large datasets and advanced modeling techniques. Passionate about enhancing company operations with innovative solutions.</p>
+        </section>
+        <section id="experience" class="content-section">
+            <h2>Experience</h2>
+            <div class="experience-details">
+                <h3>IBM — Data Scientist, Austin, TX</h3>
+                <p>August 2020 - Present</p>
+                <ul>
+                <li>Developing various Generative AI proofs of concept and pilots with tools like langchain, Azure Open AI, watsonx.ai, Flask, and Fast API to significantly reduce manual labor.</li>
+                <li>Implementing scalable data pipelines with AWS technologies, halving data processing times and enhancing the efficiency of a rule-based recommendation engine.</li>
+                <li>Collaborating effectively with teams and leaders to meet analytical needs, achieving a 95% client satisfaction rate.</li>
+                <li>Creating a KPI scorecard using SAS and SQL for monitoring data quality and detecting anomalies, reducing data incidents by 20%.</li> 
+                <li>Analyzing a large fatal accident dataset with Python to develop a K-means clustering model that pinpointed key risk factors.</li>
+                <li>Assisting in a data strategy project by understanding the architecture, making valuable recommendations, and supporting data-driven decisions.</li>
+                <li>Leading a crucial part of the COVID response effort, providing statistical insights and reports on a public website with over 1 million users.</li>
+            </ul>   
+            </div>
+            <div class="experience-details">
+                <h3>Pfizer — Data Science Intern, New York NY</h3>
+                <p>June 2019 - December 2019</p>
+                <ul>
+                <li>Utilized decision tree, logistic regression, and deep neural networks for pharmaceutical data analysis and time series forecasting in Python.</li>
+                <li>Leveraged BigML for advanced machine learning and deep learning techniques, including time series forecasting.</li> 
+                <li>Developed a plugin to integrate BigML into Dataiku, enhancing data analytics capabilities.</li> 
+                <li>Conducted sequence analysis with R to predict rare diseases from pharmaceutical data.</li>
+                <li>Employed Tableau for innovative visualization techniques, uncovering and exploring data insights effectively.</li>
 
-			<!-- Sidebar -->
-			<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+                </ul>
 
-				<button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
 
-				<div class="inner">
-					<nav id="tmMainNav" class="tm-main-nav">
-						<ul>
-							<li>
-								<a href="#intro" id="tmNavLink1" class="scrolly active" data-bg-img="IMG_5372.JPG" data-page="#tm-section-1">
-									<i class="fa fa-heartbeat  tm-nav-fa-icon" aria-hidden="true"></i>
-									<span>Hello</span>
-								</a>
-							</li>
-							<li>
-								<a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="IMG_5372.JPG" data-page="#tm-section-2" data-page-type="carousel">
-									<i class="fa fa-star  tm-nav-fa-icon"></i>
-									<span>Always Smile</span>
-								</a>
-							</li>							
-							<li>
-								<a href="#company" class="scrolly" data-bg-img="IMG_5372.JPG" data-page="#tm-section-3">
-									<i class="fas fa-female tm-nav-fa-icon"></i>
-									<span>You are Special</span>
-								</a>
-							</li>
-							<li>
-								<a href="#contact" class="scrolly" data-bg-img="IMG_5372.JPG" data-page="#tm-section-4">
-									<i class="fas fa-comments tm-nav-fa-icon"></i>
-									<span>Message</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
 
-			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
-
-					<!-- section 1 -->
-					<section id="tm-section-1" class="tm-section">
-						<div class="ml-auto">
-							<header class="mb-4"><h1 class="tm-text-shadow">Hiii Titu,</h1></header>
-							<p class="mb-5 tm-font-big"><h1>Wish you 5 years of togetherness.</h1></p>
-							<a href="#" class="btn tm-btn tm-font-big" data-nav-link="#tmNavLink2">There is More here...</a> 
-							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
-						</div>
-					</section>
-
-					<!-- section 2 -->
-					<section id="tm-section-2" class="tm-section tm-section-carousel">
-						<div>
-							<header class="mb-4"><h2 class="tm-text-shadow">Your Smile Kills Me</h2></header>		            
-							<div class="tm-img-container">
-								<div class="tm-img-slider">
-									<a href="img/IMG_5282.PNG" class="tm-slider-img"><img src="img/IMG_5282.PNG" alt="Image" class="img-fluid"></a>
-									<a href="img/IMG_5541.PNG" class="tm-slider-img"><img src="img/IMG_5541.PNG" alt="Image" class="img-fluid"></a>
-									<a href="img/IMG_5825.PNG" class="tm-slider-img"><img src="img/IMG_5825.PNG" alt="Image" class="img-fluid"></a>
-									<a href="img/IMG_5740.PNG" class="tm-slider-img"><img src="img/IMG_5740.PNG" alt="Image" class="img-fluid"></a>
-									<a href="img/IMG_7324.PNG" class="tm-slider-img"><img src="img/IMG_7324.PNG" alt="Image" class="img-fluid"></a>
-									<a href="img/IMG_6716.PNG" class="tm-slider-img"><img src="img/IMG_6716.PNG" alt="Image" class="img-fluid"></a>
-								</div>
-							</div>		            		          
-						</div>       		          	
-					</section>
-
-					<!-- section 3 -->
-					<section id="tm-section-3" class="tm-section">						
-						<div class="row mb-4">
-							<header class="col-xl-12"><h2 class="tm-text-shadow">Its 5 years..</h2></header>		
-						</div>
-						<div class="row">
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fa fa-heartbeat tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>I am proud of you</h3>
-										<p>I cannot explain how proud I am of you and how much that makes me fall in love with you everyday.                               </p>	
-									</div>
-								</div>
-							</div>	
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fa fa-heartbeat mr-4 tm-icon-circled tm-icon-media"></i>	
-									<div class="media-body">
-										<h3>I want to spend my 80's with you</h3>
-											<p> I want to take our love all the way and then look into your eyes when you are 80 years old and then tell you, "We did it Baby!!"</p>									
-										</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fa fa-heartbeat mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>I want to hold your hands tight</h3>
-										<p>I want to hold your hands tight whenever you are feeling low and then tell you, "Hey Baby everything will be fine"                                                                                              </p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fa fa-heartbeat mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>I want to love you</h3>
-										<p>I want to love you without any boundaries, without any restriction, without anyone ever telling us anything, and without worrying about anyone else, I just want to look into your eyes and tell you,"I Love You"</p>
-									</div>
-								</div>
-							</div>			          		
-						</div>						               
-					</section>
-
-					<!-- section 4 -->
-					<section id="tm-section-4" class="tm-section">
-						<div class="tm-bg-transparent-black tm-contact-box-pad">
-							<div class="row mb-4">
-								<div class="col-sm-12">
-									<header><h2 class="tm-text-shadow">Message from Baivab</h2></header>
-								</div>
-							</div>
-							<div class="row tm-page-4-content">
-								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="contact_message">
-										<form action="#contact" method="post" class="contact-form">
-											<div class="form-group">
-												<input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Baivab Pokhrel" >
-											</div>
-											<div class="form-group">
-												<input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="baivab.pokhrel@gmail.com" >
-											</div>
-											<div class="form-group">
-												<textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Shristi, I love you 
-												You are my lifeline Titu, I promise that I will always make you hapy. You know how much precious your smile is to me, I will never let that smile down.
-												I love you❤️." ></textarea>
-											</div>
-											<button onclick="myFunction()" class="btn tm-btn ml-auto" type="button">What Say?
-												😉
-											</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="tm-address-box">
-										<p>This is a message sent by Baivab Pokhrel to Shristi Sharma.</p>
-										<p> This is where they met <br>27.739486, 85.339205</p>
-										<address>
-											This is where they will take it :<br>
-											To the Moon!!
-										</address>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>					
-				</div>	<!-- .tm-content -->							
-				<footer class="footer-link">
-                    
-                    
-				</footer>
-			</div>	<!-- row -->			
-		</div>
-		<div id="preload-01"> </div>
-		<div id="preload-02"> </div>
-		<div id="preload-03"> </div>
-		<div id="preload-04"> </div>
-
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-		<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-		<script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
-
-		<script>
-
-		var sidebarVisible = false;
-		var currentPageID = "#tm-section-1";
-
-		function myFunction() {
-  		alert("I will always be there")
-}
-		// Setup Carousel
-		function setupCarousel() {
-
-			// If current page isn't Carousel page, don't do anything.
-			if($('#tm-section-2').css('display') == "none") {
-			}
-			else {	// If current page is Carousel page, set up the Carousel.
-
-				var slider = $('.tm-img-slider');
-				var windowWidth = $(window).width();
-
-				if (slider.hasClass('slick-initialized')) {
-					slider.slick('destroy');
-				}
-
-				if(windowWidth < 640) {
-					slider.slick({
-	              		dots: true,
-	              		infinite: false,
-	              		slidesToShow: 1,
-	              		slidesToScroll: 1
-	              	});
-				}
-				else if(windowWidth < 992) {
-					slider.slick({
-	              		dots: true,
-	              		infinite: false,
-	              		slidesToShow: 2,
-	              		slidesToScroll: 1
-	              	});
-				}
-				else {
-					// Slick carousel
-	              	slider.slick({
-	              		dots: true,
-	              		infinite: false,
-	              		slidesToShow: 3,
-	              		slidesToScroll: 2
-	              	});
-				}
-
-				// Init Magnific Popup
-				$('.tm-img-slider').magnificPopup({
-				  delegate: 'a', // child items selector, by clicking on it popup will open
-				  type: 'image',
-				  gallery: {enabled:true}
-				  // other options
-				});
-      		}
-  		}
-
-  		// Setup Nav
-  		function setupNav() {
-  			// Add Event Listener to each Nav item
-	     	$(".tm-main-nav a").click(function(e){
-	     		e.preventDefault();
-		    	
-		    	var currentNavItem = $(this);
-		    	changePage(currentNavItem);
-		    	
-		    	setupCarousel();
-		    	setupFooter();
-
-		    	// Hide the nav on mobile
-		    	$("#tmSideBar").removeClass("show");
-		    });	    
-  		}
-
-  		function changePage(currentNavItem) {
-  			// Update Nav items
-  			$(".tm-main-nav a").removeClass("active");
-     		currentNavItem.addClass("active");
-
-	    	$(currentPageID).hide();
-
-	    	// Show current page
-	    	currentPageID = currentNavItem.data("page");
-	    	$(currentPageID).fadeIn(1000);
-
-	    	// Change background image
-	    	var bgImg = currentNavItem.data("bgImg");
-	    	$.backstretch("img/" + bgImg);		    	
-  		}
-
-  		// Setup Nav Toggle Button
-  		function setupNavToggle() {
-
-			$("#tmMainNavToggle").on("click", function(){
-				$(".sidebar").toggleClass("show");
-			});
-  		}
-
-  		// If there is enough room, stick the footer at the bottom of page content.
-  		// If not, place it after the page content
-  		function setupFooter() {
-  			
-  			var padding = 100;
-  			var footerPadding = 40;
-  			var mainContent = $("section"+currentPageID);
-  			var mainContentHeight = mainContent.outerHeight(true);
-  			var footer = $(".footer-link");
-  			var footerHeight = footer.outerHeight(true);
-  			var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
-  			var windowHeight = $(window).height();		
-
-  			if(totalPageHeight > windowHeight){
-  				$(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
-  				footer.css("bottom", footerHeight + "px");  			
-  			}
-  			else {
-  				$(".tm-content").css("margin-bottom", "0");
-  				footer.css("bottom", "20px");  				
-  			}  			
-  		}
-
-  		// Everything is loaded including images.
-      	$(window).on("load", function(){
-
-      		// Render the page on modern browser only.
-      		if(renderPage) {
-				// Remove loader
-		      	$('body').addClass('loaded');
-
-		      	// Page transition
-		      	var allPages = $(".tm-section");
-
-		      	// Handle click of "Continue", which changes to next page
-		      	// The link contains data-nav-link attribute, which holds the nav item ID
-		      	// Nav item ID is then used to access and trigger click on the corresponding nav item
-		      	var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
-			    
-			    if(linkToAnotherPage != null) {
-			    	
-			    	linkToAnotherPage.on("click", function(){
-			    		var navItemToHighlight = linkToAnotherPage.data("navLink");
-			    		$("a" + navItemToHighlight).click();
-			    	});
-			    }
-		      	
-		      	// Hide all pages
-		      	allPages.hide();
-
-		      	$("#tm-section-1").fadeIn();
-
-		     	// Set up background first page
-		     	var bgImg = $("#tmNavLink1").data("bgImg");
-		     	
-		     	$.backstretch("img/" + bgImg, {fade: 500});
-
-		     	// Setup Carousel, Nav, and Nav Toggle
-			    setupCarousel();
-			    setupNav();
-			    setupNavToggle();
-			    setupFooter();
-
-			    // Resize Carousel upon window resize
-			    $(window).resize(function() {
-			    	setupCarousel();
-			    	setupFooter();
-			    });
-      		}	      	
-		});
-
-		</script>
-	</body>
+                </p>
+            </div>
+        </section>
+        <section id="skills" class="content-section">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <p><u>Programming Languages</u>: Python, R, SQL, SAS, HTML, CSS, JavaScript</p>
+                <p><u>Framework and Tools</u>: langchain, git, Flask, Fast API, streamlit, Jupyter Notebook</p>
+                <p><u>Cloud Services</u>: Azure OpenAI, Azure Functions, Azure Blob, AWS Lambda, AWS Glue, watsonx.ai</p>
+                <p><u>Packages and Libraries</u>: pandas, scikit-learn, tensor flow, keras, nltk, matplotlib, opencv</p>
+            </div>
+        </section>
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <p>The City College of New York — B.Sc in Computer Science, May 2020</p>
+        </section>
+        <section id="game" class="content-section">
+            <h2>Let's Play a Quick Game</h2>
+            <div id="number-guess-game">
+                <p> </p>
+                <input id="guessInput"><button onclick="evaluateGuess()">Guess</button>
+                <div id="gameResult"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact me: <a href="mailto:baivab.pokhrel@gmail.com">baivab.pokhrel@gmail.com</a> <br> <a href="https://linkedin.com/in/baivabpokhrel/" target="_blank">LinkedIn</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
