@@ -1,94 +1,889 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baivab Pokhrel - Data Scientist</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Baivab Pokhrel - Data & AI Portfolio</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lightning -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #64ffda;
+            --secondary: #ff6b6b;
+            --bg-dark: #0a192f;
+            --bg-light: #112240;
+            --text: #ffffff;
+            --text-dim: #8892b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--primary);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+
+        }
+
+
+
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+            overflow: hidden;
+        }
+
+        .geometric-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+            animation: floatShape 20s infinite;
+        }
+
+        .hexagon {
+            width: 190px;
+            height: 220px;
+            background: var(--primary);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 172px solid var(--secondary);
+        }
+
+        .circle {
+            width: 160px;
+            height: 160px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .square {
+            width: 160px;
+            height: 160px;
+            background: var(--secondary);
+            transform: rotate(45deg);
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 60%;
+            animation-delay: -10s;
+        }
+
+        .shape:nth-child(4) {
+            top: 80%;
+            left: 30%;
+            animation-delay: -15s;
+        }
+
+        @keyframes floatShape {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(50px, -30px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(0, 50px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(-50px, -30px) rotate(270deg);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            background: rgba(17, 34, 64, 0.7);
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            transform: rotate(-5deg);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-image:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+        }
+
+        .profile-image-container {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            transform: rotate(-5deg);
+            transition: all 0.5s ease;
+            position: relative;
+            background: var(--bg-dark);
+        }
+
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .title-section {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 54px;
+            font-weight: 700;
+        }
+
+        .data-title {
+            color: var(--primary);
+            animation: glowText 2s infinite alternate;
+        }
+
+        .ai-title {
+            color: var(--secondary);
+            animation: glowText 2s infinite alternate-reverse;
+        }
+
+        @keyframes glowText {
+            from {
+                text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 30px rgba(100, 255, 218, 0.8), 0 0 40px rgba(100, 255, 218, 0.6);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            margin: 20px 0;
+            background: rgba(17, 34, 64, 0.9);
+            border-radius: 10px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .experience-card {
+            background: rgba(17, 34, 64, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+        }
+
+        .experience-card h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card .company {
+            color: var(--secondary);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .experience-card .duration {
+            color: var(--text-dim);
+            margin-bottom: 15px;
+        }
+
+        .experience-card ul {
+            list-style: none;
+        }
+
+        .experience-card ul li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .experience-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Skills Grid */
+        .skills-section {
+            padding: 40px 20px;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-category {
+            margin-bottom: 30px;
+            background: rgba(17, 34, 64, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skills-category:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(100, 255, 218, 0.15);
+        }
+
+        .category-title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: rgba(17, 34, 64, 0.8);
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            background: rgba(100, 255, 218, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* Animation for skill items */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-item {
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(var(--item-index) * 0.1s);
+            opacity: 0;
+        }
+
+        /* Education Section */
+        .education-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .education-item {
+            background: rgba(17, 34, 64, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+        }
+
+        .education-item h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .education-item .school {
+            color: var(--secondary);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .education-item .duration {
+            color: var(--text-dim);
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .certification-card {
+            background: rgba(17, 34, 64, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+        }
+
+        .certification-card h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .certification-card .issuer {
+            color: var(--secondary);
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .certification-card .date {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(17, 34, 64, 0.95);
+            padding: 50px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 24px;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+        }
+
+        .footer-text {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .footer-email {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-email:hover {
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title-section {
+                font-size: 42px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-section {
+                font-size: 32px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="background-animation"></div>
-    <header>
-        <nav id="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#game">Game</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home" class="hero">
-            <img src="img/baivab_pic.jpeg" alt="Baivab Pokhrel" id="profile-pic" style="display: none; max-width: 150px; border-radius: 50%; margin: 20px auto;">
-            <h1 id="typing-name"></h1>
-            <p id="typing-description"></p>
-        </section>
-        
-        <section id="about" class="content-section">
-            <h2>About Me</h2>
-            <p>Experienced Data Scientist proficient in handling large datasets and advanced modeling techniques. Passionate about enhancing company operations with innovative solutions.</p>
-        </section>
-        <section id="experience" class="content-section">
-            <h2>Experience</h2>
-            <div class="experience-details">
-                <h3>IBM — Data Scientist, Austin, TX</h3>
-                <p>August 2020 - Present</p>
-                <ul>
-                <li>Developing various Generative AI proofs of concept and pilots with tools like langchain, Azure Open AI, watsonx.ai, Flask, and Fast API to significantly reduce manual labor.</li>
-                <li>Implementing scalable data pipelines with AWS technologies, halving data processing times and enhancing the efficiency of a rule-based recommendation engine.</li>
-                <li>Collaborating effectively with teams and leaders to meet analytical needs, achieving a 95% client satisfaction rate.</li>
-                <li>Creating a KPI scorecard using SAS and SQL for monitoring data quality and detecting anomalies, reducing data incidents by 20%.</li> 
-                <li>Analyzing a large fatal accident dataset with Python to develop a K-means clustering model that pinpointed key risk factors.</li>
-                <li>Assisting in a data strategy project by understanding the architecture, making valuable recommendations, and supporting data-driven decisions.</li>
-                <li>Leading a crucial part of the COVID response effort, providing statistical insights and reports on a public website with over 1 million users.</li>
-            </ul>   
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Baivab Pokhrel</a>
+            <div class="nav-links">
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#certifications">Certifications</a>
             </div>
-            <div class="experience-details">
-                <h3>Pfizer — Data Science Intern, New York NY</h3>
-                <p>June 2019 - December 2019</p>
-                <ul>
-                <li>Utilized decision tree, logistic regression, and deep neural networks for pharmaceutical data analysis and time series forecasting in Python.</li>
-                <li>Leveraged BigML for advanced machine learning and deep learning techniques, including time series forecasting.</li> 
-                <li>Developed a plugin to integrate BigML into Dataiku, enhancing data analytics capabilities.</li> 
-                <li>Conducted sequence analysis with R to predict rare diseases from pharmaceutical data.</li>
-                <li>Employed Tableau for innovative visualization techniques, uncovering and exploring data insights effectively.</li>
+        </div>
+    </nav>
 
-                </ul>
-
-
-
-                </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="geometric-shapes">
+            <div class="shape hexagon"></div>
+            <div class="shape triangle"></div>
+            <div class="shape circle"></div>
+            <div class="shape square"></div>
+        </div>
+        <div class="hero-content">
+            <div class="profile-image-container">
+                <img src="img/baivab.jpeg" alt="Baivab Pokhrel">
             </div>
-        </section>
-        <section id="skills" class="content-section">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <p><u>Programming Languages</u>: Python, R, SQL, SAS, HTML, CSS, JavaScript</p>
-                <p><u>Framework and Tools</u>: langchain, git, Flask, Fast API, streamlit, Jupyter Notebook</p>
-                <p><u>Cloud Services</u>: Azure OpenAI, Azure Functions, Azure Blob, AWS Lambda, AWS Glue, watsonx.ai</p>
-                <p><u>Packages and Libraries</u>: pandas, scikit-learn, tensor flow, keras, nltk, matplotlib, opencv</p>
+            <div class="title-section">
+                <div class="data-title">DATA</div>
+                <div class="ai-title">{AI}</div>
             </div>
-        </section>
-        <section id="education" class="content-section">
-            <h2>Education</h2>
-            <p>The City College of New York — B.Sc in Computer Science, May 2020</p>
-        </section>
-        <section id="game" class="content-section">
-            <h2>Let's Play a Quick Game</h2>
-            <div id="number-guess-game">
-                <p> </p>
-                <input id="guessInput"><button onclick="evaluateGuess()">Guess</button>
-                <div id="gameResult"></div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">EXPERIENCE</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Data Scientist</h3>
+                    <div class="company">IBM</div>
+                    <div class="duration">August 2020 - Present</div>
+                    <ul>
+                        <li>Deployed Generative AI solutions with langchain and Azure OpenAI, reducing manual workload
+                            by 40% in HR and customer service</li>
+                        <li>Implemented ML models using IBM Cloud services to optimize operations and resource
+                            efficiency</li>
+                        <li>Created data pipelines with AWS Lambda/Glue/RDS, cutting processing time by 50%</li>
+                        <li>Developed KPI scorecard using SAS/SQL, reducing data incidents by 20%</li>
+                        <li>Performed PySpark analysis on fatal accident data to identify key risk factors</li>
+                        <li>Enhanced customer service with text analytics, improving accuracy by 25%</li>
+                        <li>Prototyped Generative AI solutions for compliance and maintenance automation</li>
+                        <li>Led COVID response website reaching 1M+ users with 95% satisfaction rate</li>
+
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Data Science Intern</h3>
+                    <div class="company">Pfizer</div>
+                    <div class="duration">2019 - 2021</div>
+                    <ul>
+                        <li>Applied decision tree, logistic regression, and deep neural networks to analyze
+                            pharmaceutical data and perform time series forecasting using Python</li>
+                        <li>Leveraged BigML to utilize machine learning, deep learning techniques, and time series
+                            forecasting</li>
+                        <li>Developed a plugin integrating BigML into Dataiku using Python</li>
+                        <li>Performed sequence analysis on pharmaceutical data to predict a rare disease using R</li>
+                        <li>Utilized Tableau for creative visualization techniques to explore data insights</li>
+                    </ul>
+                </div>
             </div>
         </section>
-    </main>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="skills-container">
+                <h2 class="section-title">SKILLS</h2>
+
+                <div class="skills-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--item-index: 1">Python</div>
+                        <div class="skill-item" style="--item-index: 2">SQL</div>
+                        <div class="skill-item" style="--item-index: 3">R</div>
+                        <div class="skill-item" style="--item-index: 4">SAS</div>
+                        <div class="skill-item" style="--item-index: 5">HTML</div>
+                        <div class="skill-item" style="--item-index: 6">CSS</div>
+                        <div class="skill-item" style="--item-index: 7">JavaScript</div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="category-title">Frameworks & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--item-index: 1">LangChain</div>
+                        <div class="skill-item" style="--item-index: 2">Git</div>
+                        <div class="skill-item" style="--item-index: 3">Flask</div>
+                        <div class="skill-item" style="--item-index: 4">FastAPI</div>
+                        <div class="skill-item" style="--item-index: 5">streamlit</div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="category-title">Cloud Services</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--item-index: 1">Azure OpenAI</div>
+                        <div class="skill-item" style="--item-index: 2">Azure Functions</div>
+                        <div class="skill-item" style="--item-index: 3">Azure Blob</div>
+                        <div class="skill-item" style="--item-index: 4">AWS Lambda</div>
+                        <div class="skill-item" style="--item-index: 5">AWS Glue</div>
+                        <div class="skill-item" style="--item-index: 6">watsonx.ai</div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="category-title">Packages & Libraries</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--item-index: 1">pandas</div>
+                        <div class="skill-item" style="--item-index: 2">scikit-learn</div>
+                        <div class="skill-item" style="--item-index: 3">PySpark</div>
+                        <div class="skill-item" style="--item-index: 4">ntlk</div>
+                        <div class="skill-item" style="--item-index: 5">matplotlib</div>
+                        <div class="skill-item" style="--item-index: 6">openCV</div>
+                        <div class="skill-item" style="--item-index: 7">keras</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">EDUCATION</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>Bachelor's in Computer Science</h3>
+                    <div class="school">The City College of New York, New York</div>
+                    <div class="duration">2017 - 2020</div>
+                </div>
+                <div class="education-item">
+                    <h3>Associate's in Computer Science</h3>
+                    <div class="school">Borough of Manhattan Community College, New York</div>
+                    <div class="duration">2016 - 2017</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-title">CERTIFICATIONS</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3>Salesforce AI Associate</h3>
+                    <div class="issuer">Salesforce</div>
+                    <div class="date">2024</div>
+                </div>
+                <div class="certification-card">
+                    <h3>Introduction to Generative AI</h3>
+                    <div class="issuer">Google Cloud Skills Boost</div>
+                    <div class="date">2023</div>
+                </div>
+                <div class="certification-card">
+                    <h3>Microsoft Certified: Azure Fundamentals</h3>
+                    <div class="issuer">Microsoft</div>
+                    <div class="date">2022</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>Contact me: <a href="mailto:baivab.pokhrel@gmail.com">baivab.pokhrel@gmail.com</a> <br> <a href="https://linkedin.com/in/baivabpokhrel/" target="_blank">LinkedIn</a></p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+
+                    <a href="https://www.linkedin.com/in/baivabpokhrel/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                </div>
+                <p class="footer-text">Building Intelligent Solutions with Data & AI</p>
+                <a href="mailto:your.email@example.com" class="footer-email">baivab.pokhrel@gmail.com</a>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero animations
+        const tl = gsap.timeline();
+
+        tl.from('.hero-content', {
+            duration: 1.5,
+            y: 100,
+            opacity: 0,
+            ease: 'power4.out'
+        })
+            .from('.profile-image', {
+                duration: 1,
+                scale: 0.5,
+                rotation: -15,
+                opacity: 0,
+                ease: 'back.out(1.7)'
+            }, '-=0.5')
+            .from('.title-section div', {
+                duration: 0.8,
+                y: 50,
+                opacity: 0,
+                stagger: 0.2,
+                ease: 'power3.out'
+            }, '-=0.5');
+
+        // Scroll animations for sections
+        gsap.utils.toArray('section:not(.hero)').forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top center+=100',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Experience cards animation
+        gsap.utils.toArray('.experience-card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+        });
+
+        // Skills animation
+        gsap.utils.toArray('.skill-item').forEach((skill, i) => {
+            gsap.from(skill, {
+                scrollTrigger: {
+                    trigger: skill,
+                    start: 'top bottom-=50',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                scale: 0.5,
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: 'back.out(1.7)'
+            });
+        });
+
+        // Certifications animation
+        gsap.utils.toArray('.certification-card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+        });
+
+        // Social links animation
+        gsap.from('.social-links a', {
+            scrollTrigger: {
+                trigger: '.footer',
+                start: 'top bottom-=100'
+            },
+            y: 30,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: 'power3.out'
+        });
+    </script>
 </body>
+
 </html>
