@@ -1,4 +1,3 @@
-
 const header=document.querySelector('[data-header]'),button=document.querySelector('[data-menu-toggle]'),nav=document.querySelector('[data-nav-links]');
 const updateHeader=()=>header?.classList.toggle('scrolled',scrollY>16);updateHeader();addEventListener('scroll',updateHeader,{passive:true});
 button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));button.setAttribute('aria-label',open?'Open navigation':'Close navigation');button.classList.toggle('active',!open);nav?.classList.toggle('open',!open)});
